@@ -1,0 +1,9 @@
+# spring boot 2.0 부터 taskExecutor 의 yaml 설정 방식 지원
+
+#spring:
+#  task:
+#    execution:
+#      thread-name-prefix: AsyncMessage-
+#      pool:
+#        core-size: 8
+#        max-size: 8
