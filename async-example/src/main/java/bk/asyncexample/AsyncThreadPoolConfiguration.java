@@ -16,7 +16,7 @@ public class AsyncThreadPoolConfiguration {
         ThreadPoolTaskExecutor threadPoolTaskExecutor = new ThreadPoolTaskExecutor();
         threadPoolTaskExecutor.setCorePoolSize(8);
         threadPoolTaskExecutor.setMaxPoolSize(8);
-        threadPoolTaskExecutor.setThreadNamePrefix("AsyncKakaoEmail-");
+        threadPoolTaskExecutor.setThreadNamePrefix("AsyncKakaoEmailTask-");
         return threadPoolTaskExecutor;
     }
 
@@ -25,7 +25,7 @@ public class AsyncThreadPoolConfiguration {
         ThreadPoolTaskExecutor threadPoolTaskExecutor = new ThreadPoolTaskExecutor();
         threadPoolTaskExecutor.setCorePoolSize(8);
         threadPoolTaskExecutor.setMaxPoolSize(8);
-        threadPoolTaskExecutor.setThreadNamePrefix("AsyncNaverEmail-");
+        threadPoolTaskExecutor.setThreadNamePrefix("AsyncEmailTask-");
         return threadPoolTaskExecutor;
     }
 }
