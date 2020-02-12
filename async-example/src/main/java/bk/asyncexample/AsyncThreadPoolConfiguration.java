@@ -23,9 +23,10 @@ public class AsyncThreadPoolConfiguration {
     @Bean
     public Executor asyncNaverEmailTaskExecutor() {
         ThreadPoolTaskExecutor threadPoolTaskExecutor = new ThreadPoolTaskExecutor();
+        // cf) default core pool size is 1
         threadPoolTaskExecutor.setCorePoolSize(8);
         threadPoolTaskExecutor.setMaxPoolSize(8);
-        threadPoolTaskExecutor.setThreadNamePrefix("AsyncEmailTask-");
+        threadPoolTaskExecutor.setThreadNamePrefix("AsyncNaverEmailTask-");
         return threadPoolTaskExecutor;
     }
 }
