@@ -15,6 +15,9 @@ public class AsyncEmailClient implements EmailClient {
     @SneakyThrows
     @Override
     public void sendToKakao(final int memberNumber) {
+        if (memberNumber == 5) {
+            throw new EmailSentException("Failed to send kakao email. member number : " + memberNumber);
+        }
         log.info("member number : {}", memberNumber);
         Thread.sleep(3_000);
     }
