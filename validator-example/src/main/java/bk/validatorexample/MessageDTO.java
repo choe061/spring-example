@@ -1,30 +1,36 @@
 package bk.validatorexample;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.springframework.format.annotation.DateTimeFormat;
+import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
 import java.time.LocalDate;
 
+import static com.fasterxml.jackson.annotation.JsonFormat.Shape.STRING;
+
 @Data
-public class EventMessageDTO {
+@NoArgsConstructor
+@AllArgsConstructor
+public class MessageDTO {
     @NotBlank
     private String name;
 
     @Email
-    private String writerUserEmail;
+    private String email;
 
-    @Pattern(regexp = "^\\+(?:[0-9] ?){6,14}[0-9]$")
-    private String contactNumber;
+//    @Phone
+//    private String contactNumber;
+    private PhoneNumber contactNumber;
 
     @NotNull
-    @DateTimeFormat(pattern = "yyyyMMdd")
+    @JsonFormat(shape = STRING, pattern = "yyyyMMdd", timezone = "Asia/Seoul")
     private LocalDate startAt;
 
     @NotNull
-    @DateTimeFormat(pattern = "yyyyMMdd")
+    @JsonFormat(shape = STRING, pattern = "yyyyMMdd", timezone = "Asia/Seoul")
     private LocalDate endAt;
 }
