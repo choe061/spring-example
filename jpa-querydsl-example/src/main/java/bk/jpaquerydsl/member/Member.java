@@ -31,6 +31,9 @@ public class Member {
     @Column(name = "name", nullable = false)
     private String name;
 
+    @Column(name = "age", nullable = false)
+    private int age;
+
     @Column(name = "team_id", nullable = false)
     private long team_id;
 
